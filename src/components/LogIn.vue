@@ -8,7 +8,7 @@
               <p v-if="isConnected">Connected</p>
               <p v-if="isConnError" class="error">{{ errorMsg }}</p>
               <p v-if="isAuthError" class="error">{{ errorMsg }}</p>
-              <pre>{{socketMsg}}</pre>
+              
               <v-toolbar dark color="primary">
                 <v-toolbar-title>Login form</v-toolbar-title>
               </v-toolbar>
@@ -40,6 +40,7 @@
                 <v-btn color="primary" @click="login()">Login</v-btn>
               </v-card-actions>
               <contacts></contacts>
+              <pre>{{socketMsg}}</pre>
             </v-card>
           </v-flex>
         </v-layout>
@@ -64,7 +65,7 @@ export default {
       authCmd: {
         action: "auth",
         email: 'saratest@bicomsystems.com',
-        password: 'Saratest123!'
+        password: 'Sara123!'
       },
     };
   },

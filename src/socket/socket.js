@@ -1,7 +1,7 @@
 import Vue from "vue";
-//import router from "../router";
+import router from "../router";
 
-const socket = new WebSocket("ws://localhost:8080/ws");
+const socket = new WebSocket("wss://pbx-201.bicomsystems.com/pwproxyws")
 
 const emitter = new Vue({
   methods: {
@@ -29,7 +29,7 @@ const emitter = new Vue({
         } else if (response.action === "init") {
           if (response.state === "end" && response.success === 1) {
             console.log("initialized");
-            //router.push('/');
+            router.push('/');
           }
         } else if (response.action === "extensions" && response.success === 1) {
           emitter.$emit("ext", response.extensions);
